@@ -130,13 +130,25 @@ ul { list-style: none; }
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: .4rem .8rem;
+  gap: 2rem;
+}
+.topbar-left,
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: .5rem .7rem;
 }
 .topbar a { color: rgba(255,255,255,.85); }
 .topbar a:hover { color: var(--accent-l); }
 .topbar .sep { opacity: .25; }
 .topbar-rating { color: #f5c842; font-weight: 600; }
+
+@media (max-width: 640px) {
+  .topbar-inner {
+    justify-content: space-between;
+    gap: .5rem;
+  }
+}
 
 /* ═══════════════════════════════════════════════
    HEADER
@@ -205,6 +217,7 @@ ul { list-style: none; }
 .nav a:hover::after { width: 100%; }
 
 .nav-cta { margin-left: 1rem; }
+.nav-cta a::after { display: none; }
 
 /* Hamburger */
 .nav-toggle {
@@ -598,8 +611,8 @@ ul { list-style: none; }
 ═══════════════════════════════════════════════ */
 .contact-grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  gap: 4rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
   align-items: start;
 }
 
@@ -653,6 +666,8 @@ ul { list-style: none; }
   display: flex;
   flex-direction: column;
   gap: 1.8rem;
+  padding-top: 2rem;
+  padding-left: 1.5rem;
 }
 .contact-info-row {
   display: flex;
@@ -661,11 +676,12 @@ ul { list-style: none; }
 }
 .ci-icon {
   width: 44px; height: 44px;
-  background: rgba(255,255,255,.07);
+  background: rgba(193,120,62,.15);
   border-radius: var(--r2);
   display: flex; align-items: center; justify-content: center;
   font-size: 1.3rem;
   flex-shrink: 0;
+  color: var(--accent-l);
 }
 .ci-label {
   font-family: 'Montserrat', sans-serif;
@@ -715,17 +731,15 @@ ul { list-style: none; }
   .contact-grid     { grid-template-columns: 1fr; gap: 2.5rem; }
   .form-row         { grid-template-columns: 1fr; }
   .trust-sep        { display: none; }
-  .trust-inner      { gap: .75rem; }
-  .trust-item       { padding: .5rem 1.5rem; }
+  .trust-inner      { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem 0; }
+  .trust-item       { padding: 1rem 0; }
 }
 
 /* ═══════════════════════════════════════════════
    RESPONSIVE — 640px
 ═══════════════════════════════════════════════ */
 @media (max-width: 640px) {
-  /* topbar */
-  .topbar-rating-sep,
-  .topbar-rating { display: none; }
+  /* topbar — handled by topbar-inner justify-content:space-between */
 
   /* header mobile */
   #header { position: relative; }
