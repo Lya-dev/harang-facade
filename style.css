@@ -131,6 +131,12 @@ ul { list-style: none; }
   align-items: center;
   justify-content: center;
   gap: 2rem;
+  white-space: nowrap;
+  overflow: hidden;
+}
+@media (max-width: 480px) {
+  .topbar { font-size: .7rem; }
+  .topbar-inner { gap: .8rem; }
 }
 .topbar a { color: rgba(255,255,255,.85); }
 .topbar a:hover { color: var(--accent-l); }
