@@ -1,13 +1,33 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8HMFDYSX4"></script>
+  <!-- Google tag (gtag.js) — chargement différé (interaction ou 3 s) -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-C8HMFDYSX4');
+
+    (function(){
+      var loaded = false;
+      function loadGA() {
+        if (loaded) return;
+        loaded = true;
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-C8HMFDYSX4';
+        document.head.appendChild(s);
+      }
+      var evts = ['scroll','click','keydown','touchstart'];
+      function onInteract() {
+        loadGA();
+        evts.forEach(function(e){ window.removeEventListener(e, onInteract); });
+      }
+      evts.forEach(function(e){
+        window.addEventListener(e, onInteract, { passive: true });
+      });
+      setTimeout(loadGA, 3000);
+    })();
   </script>
 
   <meta charset="UTF-8" />
