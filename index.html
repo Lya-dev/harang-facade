@@ -35,13 +35,14 @@
   <meta name="twitter:description" content="Ravalement de façade, peinture intérieure et marquage au sol dans les Ardennes. Artisan 5/5 Google. Devis gratuit." />
   <meta name="twitter:image"       content="https://www.harang-facade.com/img/1000028623.jpg" />
 
-  <!-- Fonts -->
+  <!-- Fonts — chargement non-bloquant -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@400;600;700;800&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@400;600;700;800&display=swap" /></noscript>
 
   <!-- Preload image hero (LCP) -->
-  <link rel="preload" as="image" href="img/1000028623.jpg" fetchpriority="high" />
+  <link rel="preload" as="image" href="img/1000028623.webp" type="image/webp" fetchpriority="high" />
 
   <!-- Favicon — lettre H en terracotta -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23c1783e'/><text x='16' y='23' font-family='Montserrat,sans-serif' font-weight='800' font-size='20' fill='white' text-anchor='middle'>H</text></svg>" />
@@ -125,7 +126,10 @@
 ════════════════════════════════════ -->
 <section class="hero">
   <div class="hero-bg">
-    <img src="img/1000028623.jpg" alt="Façade après ravalement" width="720" height="958" />
+    <picture>
+      <source type="image/webp" srcset="img/1000028623.webp" />
+      <img src="img/1000028623.jpg" alt="Façade après ravalement" width="720" height="958" fetchpriority="high" />
+    </picture>
     <div class="hero-overlay"></div>
   </div>
 
@@ -267,7 +271,10 @@
 
     <div class="compare-wrap">
       <div class="compare-col">
-        <img src="img/1000028626.jpg" alt="Façade avant ravalement" loading="lazy" width="720" height="950" />
+        <picture>
+          <source type="image/webp" srcset="img/1000028626.webp" />
+          <img src="img/1000028626.jpg" alt="Façade avant ravalement" loading="lazy" width="720" height="950" />
+        </picture>
         <span class="compare-tag before">Avant</span>
       </div>
 
@@ -276,7 +283,10 @@
       </div>
 
       <div class="compare-col">
-        <img src="img/1000028623.jpg" alt="Façade après ravalement" loading="lazy" width="720" height="958" />
+        <picture>
+          <source type="image/webp" srcset="img/1000028623.webp" />
+          <img src="img/1000028623.jpg" alt="Façade après ravalement" loading="lazy" width="720" height="958" />
+        </picture>
         <span class="compare-tag after">Après</span>
       </div>
     </div>
@@ -296,15 +306,24 @@
 
     <div class="gallery">
       <div class="gallery-item">
-        <img src="img/1000028627.jpg" alt="Rénovation cuisine — peinture intérieure" loading="lazy" width="720" height="536" />
+        <picture>
+          <source type="image/webp" srcset="img/1000028627.webp" />
+          <img src="img/1000028627.jpg" alt="Rénovation cuisine — peinture intérieure" loading="lazy" width="720" height="536" />
+        </picture>
         <div class="gallery-caption">Rénovation cuisine — peinture complète</div>
       </div>
       <div class="gallery-item">
-        <img src="img/1000028624.jpg" alt="Rénovation intérieure combles" loading="lazy" width="720" height="947" />
+        <picture>
+          <source type="image/webp" srcset="img/1000028624.webp" />
+          <img src="img/1000028624.jpg" alt="Rénovation intérieure combles" loading="lazy" width="720" height="947" />
+        </picture>
         <div class="gallery-caption">Combles aménagés — plafond et poutres</div>
       </div>
       <div class="gallery-item">
-        <img src="img/1000028625.jpg" alt="Marquage PMR parking" loading="lazy" width="720" height="953" />
+        <picture>
+          <source type="image/webp" srcset="img/1000028625.webp" />
+          <img src="img/1000028625.jpg" alt="Marquage PMR parking" loading="lazy" width="720" height="953" />
+        </picture>
         <div class="gallery-caption">Marquage PMR — parking professionnel</div>
       </div>
     </div>
