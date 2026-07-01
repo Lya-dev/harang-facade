@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://harang-facade.com/sitemap.xml
+Sitemap: https://www.harang-facade.com/sitemap.xml
